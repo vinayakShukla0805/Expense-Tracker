@@ -1,18 +1,13 @@
 import express from "express";
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 
-// Middleware
-app.use(express.json());
+app.get("/",(req,res)=>{
+  console.log("Hi Vinayak Shukla is developing this");
+  res.send("this is the root");
+})
 
-app.get("/", (req, res) => {
-  res.json({
-    message: "API running..."
-  });
-  console.log("API is running...");
-});
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is listening on http://localhost:${port}`);
 });
